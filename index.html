@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Omuna.Sky-Market.shop | Your One-Stop Shop</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+
+	
+</head>
+<body>
+
+<div id="overlay" onclick="closeAll()"></div>
+
+<div id="sidebar">
+	<div class="sidebar-header">
+		<span>👤 Welcome Back, James</span>
+		<span class="sidebar-close" onclick="toggleSidebar()">×</span>
+	</div>
+	<div class="sidebar-item" onclick="filterCategory('Electronics')"><b>Electronics</b></div>
+	<div class="sidebar-item" onclick="filterCategory('Medical')"><b>Medical Care</b></div>
+	<div class="sidebar-item" onclick="filterCategory('Books')"><b>Books</b></div>
+	<div class="sidebar-item" onclick="filterCategory('Music')"><b>Sky Music</b></div>
+	<div class="sidebar-item" onclick="filterCategory('Videos')"><b>Sky Video</b></div>
+	<div class="sidebar-item" onclick="filterCategory('Customer Service')"><b>My Orders (Today's Deal)</b></div>
+</div>
+
+<header>
+	<div style="font-size: 20px; cursor: pointer;" onclick="toggleSidebar()">☰ All</div>
+	<div class="logo" onclick="filterCategory('All')">Omuna.Sky-Market.shop</div>
+
+	<div class="search-box">
+		<input type="text" id="search-input" placeholder="Search Sky Market..." onkeyup="search()">
+		<button onclick="search()">🔍</button>
+	</div>
+
+	<div style="cursor: pointer; position: relative;" onclick="toggleCart()">
+		🛒 <span style="font-weight: bold;">Cart</span>
+		<span id="cart-count" style="background: var(--amz-orange); color: black; border-radius: 50%; padding: 2px 7px; font-weight: bold;">0</span>
+	</div>
+</header>
+
+<div class="sub-nav">
+	<span onclick="filterCategory('All')">All Products</span>
+	<span onclick="filterCategory('Medical')">Medical Care</span>
+	<span onclick="filterCategory('Electronics')">Electronics</span>
+	<span onclick="filterCategory('Books')">Books</span>
+	<span onclick="filterCategory('Today\'s Deals')">Customer Service</span>
+	<span onclick="filterCategory('Customer Service')">Today's Deal</span>
+</div>
+
+<div id="cart-modal">
+	<h3 style="margin-top:0;">Shopping Cart</h3>
+	<div id="cart-items-list"></div>
+	<hr>
+	<div style="display:flex; justify-content: space-between; font-weight: bold; font-size: 18px;">
+		<span>Total:</span>
+		<span>$<span id="total-price">0</span></span>
+	</div>
+	<div id="cart-footer"></div>
+</div>
+
+<h2 id="view-title" style="padding: 20px 20px 0 20px; margin: 0;">All Products</h2>
+<div class="grid" id="product-grid"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
